@@ -33,5 +33,15 @@ class TestDnaRepository(unittest.TestCase):
         count_human = self.repo.count_human_dna()
         self.assertEqual(count_human, 1)  # Esperamos 1 secuencia humana
 
+    def test_count_total_dna(self):
+        count_total = self.repo.count_total_dna()
+        self.assertEqual(count_total, 3)
+
+    def test_get_dna_by_sequence(self):
+        dna = self.repo.get_dna_by_sequence("ATGCGA,CAGTGC,TTATGT,AGAAGG,CCCCTA,TCACTG")
+        self.assertIsNotNone(dna)
+        self.assertEqual(dna.dna, "ATGCGA,CAGTGC,TTATGT,AGAAGG,CCCCTA,TCACTG")
+        self.assertTrue(dna.is_mutant)
+
 if __name__ == "__main__":
     unittest.main()

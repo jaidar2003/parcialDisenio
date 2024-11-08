@@ -4,6 +4,7 @@ from services.mutant_service import MutantService
 mutant_bp = Blueprint('mutant', __name__)
 mutant_service = MutantService()
 
+
 @mutant_bp.route('/mutant/', methods=['POST'])
 def detect_mutant():
     data = request.get_json()
@@ -21,9 +22,14 @@ def detect_mutant():
         return jsonify({"message": "Mutant detected"}), 200
     else:
         return jsonify({"message": "Not a mutant"}), 403
-    
+
+
 @mutant_bp.route('/stats', methods=['GET'])
 def get_stats():
     stats = mutant_service.get_stats()
     return jsonify(stats)
 
+
+@mutant_bp.route('/health', methods=['GET'])
+def health():
+    return jsonify({"status": "healthy"}), 200

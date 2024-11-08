@@ -1,0 +1,13 @@
+services:
+
+type: web
+  name: ParcialDS
+  env: docker
+  plan: free
+  buildCommand: ""
+  startCommand: ""
+  envVars:
+key: FLASK_ENV
+    value: production
+key: PORT
+  value: "5000"

@@ -9,7 +9,7 @@ pip install -r requirements.txt
 ### Paso 2: Iniciar el programa
 Ejecuta el archivo principal con el siguiente comando:
 ```bash
-python app.py
+python main.py
 ```
 ### Paso 3: Configuración de Postman
 Abre Postman y carga el archivo que se encuentra en la carpeta collection. 
