@@ -3,8 +3,6 @@ from flask import Flask
 from controllers.mutant_controller import mutant_bp
 from database.db_connection import init_db
 
-
-
 app = Flask(__name__)
 
 # Inicializar la base de datos
